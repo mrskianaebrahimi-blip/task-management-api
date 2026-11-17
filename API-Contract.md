@@ -29,12 +29,14 @@ A RESTful API for managing users and tasks.
 
 ## 5. Architecture
 
+```mermaid
 flowchart TD
     A[Client] --> B[REST API]
     B --> C[Users Resource]
     B --> D[Tasks Resource]
     C --> E[(Database)]
     D --> E
+```
 
 ## 6. Response Format
 All responses use JSON format. Server Error
