@@ -1,46 +1,35 @@
 # Task Management API
 
-## 1. Project Description
-A RESTful API for managing users and their tasks.
+## 1. Overview
+A RESTful API for managing users and tasks.
 
 ## 2. Resources
-- Users: Manages user information.
-- Tasks: Manages user tasks.
+- Users
+- Tasks
 
 ## 3. Users Endpoints
 
-| Endpoint | Method | Status Code |
-|---|---|---|
-| /users | GET | 200, 500 |
-| /users/{id} | GET | 200, 404, 500 |
-| /users | POST | 201, 400, 500 |
-| /users/{id} | PUT | 200, 400, 404, 500 |
-| /users/{id} | DELETE | 204, 404, 500 |
+| Method | Endpoint | Description | Status Code |
+|---|---|---|---|
+| GET | /users | Get all users | 200 |
+| GET | /users/{id} | Get user by ID | 200 |
+| POST | /users | Create user | 201 |
+| PUT | /users/{id} | Update user | 200 |
+| DELETE | /users/{id} | Delete user | 204 |
 
 ## 4. Tasks Endpoints
 
-| Endpoint | Method | Status Code |
-|---|---|---|
-| /tasks | GET | 200, 500 |
-| /tasks/{id} | GET | 200, 404, 500 |
-| /tasks | POST | 201, 400, 500 |
-| /tasks/{id} | PUT | 200, 400, 404, 500 |
-| /tasks/{id} | DELETE | 204, 404, 500 |
+| Method | Endpoint | Description | Status Code |
+|---|---|---|---|
+| GET | /tasks | Get all tasks | 200 |
+| GET | /tasks/{id} | Get task by ID | 200 |
+| POST | /tasks | Create task | 201 |
+| PUT | /tasks/{id} | Update task | 200 |
+| DELETE | /tasks/{id} | Delete task | 204 |
 
-## 5. Architecture Diagram
+## 5. Architecture
 
-Client
-  |
-REST API
-  |
-Users and Tasks
-  |
-Database
+Client → REST API → Database
 
-## 6. HTTP Status Codes
-- 200: OK
-- 201: Created
-- 204: No Content
-- 400: Bad Request
-- 404: Not Found
-- 500: Internal Server Error
+## 6. Response Format
+All responses use JSON format. Server Error
