@@ -10,29 +10,61 @@ CI/CD is a process that automates software integration, testing, and delivery.
 
 ## 2. CI/CD Pipeline Flow
 
-The following diagram shows the main stages of a CI/CD pipeline, from pushing code to GitHub to deploying the application.
+The following diagram shows the main stages of a CI/CD pipeline.
 
-``` mermaid
-flowchart TD
-    A[Developer Pushes Code to GitHub] --> B[Checkout Source Code]
-    B --> C[Install Dependencies]
-    C --> D[Build Docker Image]
-    D --> E[Run Automated Tests]
-    E --> F{Tests Passed?}
-    F -->|Yes| G[Deploy Application]
-    F -->|No| H[Stop Pipeline]
-    H --> I[Generate Error Logs]
-    I --> J[Report Errors to Developer]
-    J --> K[Fix Code]
-    K --> L[Push Updated Code to GitHub]
-    L --> A
+```text
++-----------------------------+
+| Developer Pushes Code       |
+| to GitHub                   |
++-----------------------------+
+              |
+              v
++-----------------------------+
+| Checkout Source Code        |
++-----------------------------+
+              |
+              v
++-----------------------------+
+| Install Dependencies        |
++-----------------------------+
+              |
+              v
++-----------------------------+
+| Build Docker Image          |
++-----------------------------+
+              |
+              v
++-----------------------------+
+| Run Automated Tests         |
++-----------------------------+
+              |
+              v
+       +---------------+
+       | Tests Passed? |
+       +---------------+
+          /       \
+        Yes        No
+         |          |
+         v          v
++---------------+  +----------------+
+| Deploy        |  | Stop Pipeline  |
+| Application   |  +----------------+
++---------------+          |
+                           v
+                  +----------------+
+                  | Report Errors  |
+                  +----------------+
+                           |
+                           v
+                  +----------------+
+                  | Fix Code       |
+                  +----------------+
+                           |
+                           v
+                  +----------------+
+                  | Push Code Again|
+                  +----------------+
 ```
-
-### How the Pipeline Works
-
-The pipeline starts when a developer pushes new code to GitHub. The CI/CD system automatically retrieves the source code, installs the required dependencies, builds a Docker image, and runs automated tests.
-
-If all tests pass, the application proceeds to deployment. If any test fails, the pipeline stops, generates error logs, and reports the problem to the developer. After fixing the code, the developer pushes the updated version and the pipeline starts again.
 
 ## 3. Pipeline Stages
 
