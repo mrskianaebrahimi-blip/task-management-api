@@ -1,13 +1,14 @@
 
 # Activity 5 – CI/CD Pipeline
 
-## What is CI/CD?
-CI/CD is a process that automates testing and delivery of software.
+## 1. What is CI/CD?
 
-- **CI (Continuous Integration):** Automatically checks and tests code after changes.
-- **CD (Continuous Delivery/Deployment):** Prepares or deploys the application after successful tests.
+CI/CD is a process that automates software integration, testing, and delivery.
 
-## CI/CD Pipeline Flow
+- **Continuous Integration (CI):** Automatically checks and tests code changes.
+- **Continuous Delivery/Deployment (CD):** Prepares or deploys the application after successful tests.
+
+## 2. CI/CD Pipeline Flow
 
 ```mermaid
 flowchart TD
@@ -18,17 +19,22 @@ flowchart TD
     E --> F{Tests Passed?}
     F -->|Yes| G[Deploy Application]
     F -->|No| H[Stop Pipeline]
-    H --> I[Report Error to Developer]
+    H --> I[Report Errors to Developer]
+    I --> J[Fix Code and Push Again]
+    J --> A
 ```
 
-## Pipeline Stages
+## 3. Pipeline Stages
 
-1. **Push Code:** Developer uploads code changes to GitHub.
-2. **Checkout:** Pipeline gets the latest source code.
+1. **Push Code:** Developer uploads changes to GitHub.
+2. **Checkout:** Pipeline retrieves the latest source code.
 3. **Install Dependencies:** Required packages are installed.
-4. **Build Docker Image:** Docker creates an image using the Dockerfile.
+4. **Build Docker Image:** Docker builds an image using the Dockerfile.
 5. **Run Tests:** Automated tests check the application.
-6. **Deploy:** If all tests pass, the application can be deployed.
+6. **Decision:** Pipeline checks whether all tests passed.
+7. **Deploy:** If tests pass, the application can be deployed.
 
-## Result
-The CI/CD pipeline helps detect errors early, improves software quality, and automates the delivery process.
+## 4. Pipeline Result
+
+The pipeline automates testing and helps detect errors before deployment. It improves software quality and reduces manual work.
+
