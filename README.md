@@ -2,9 +2,11 @@
 # Task Management API
 
 ## Introduction
+
 A RESTful API designed to manage users and tasks. This project includes API documentation, a Node.js backend, Docker containerization, test cases, and CI/CD pipeline concepts.
 
 ## Features
+
 - Create tasks
 - Read tasks
 - Update tasks
@@ -17,6 +19,7 @@ A RESTful API designed to manage users and tasks. This project includes API docu
 - CI/CD pipeline documentation
 
 ## Activity 3 – API Documentation
+
 - [API Contract](API-Contract.md)
 - [API Examples](Examples.md)
 - [Error Handling](Error-Handling.md)
@@ -30,7 +33,8 @@ A RESTful API designed to manage users and tasks. This project includes API docu
 
 The backend is developed using Node.js and Express.
 
-Features:
+### Features
+
 - REST API server
 - Dockerfile configuration
 - Docker image creation
@@ -57,11 +61,14 @@ docker run -d -p 3000:3000 --name task-api-container task-management-api
 
 This activity includes test case design, CI/CD pipeline flow, test failure handling, and the relationship between Docker and CI/CD.
 
+### Documentation
+
 - [Test Cases](activity-5/Test-Cases.md)
 - [CI/CD Pipeline](activity-5/CI-CD-Pipeline.md)
 - [Docker and CI/CD Relationship](activity-5/Docker-CI-CD.md)
 
 ## Technologies
+
 - Node.js
 - Express.js
 - REST API
@@ -72,6 +79,7 @@ This activity includes test case design, CI/CD pipeline flow, test failure handl
 - CI/CD
 
 ## Project Status
+
 - Activity 3: API Documentation Completed
 - Activity 4: Dockerized Backend Completed
 - Activity 5: Test Cases and CI/CD Documentation Completed
