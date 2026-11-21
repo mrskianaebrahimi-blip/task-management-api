@@ -12,7 +12,7 @@ CI/CD is a process that automates software integration, testing, and delivery.
 
 The following diagram shows the main stages of a CI/CD pipeline, from pushing code to GitHub to deploying the application.
 
-```mermaid
+``` mermaid
 flowchart TD
     A[Developer Pushes Code to GitHub] --> B[Checkout Source Code]
     B --> C[Install Dependencies]
